@@ -39,9 +39,9 @@ const Container = styled.div`
 
   .introduction-container {
     display: grid;
-    height: 70%;
+    height: 50%;
     gap: 2rem;
-    grid-template-rows: 85% 15%;
+    grid-template-rows: 90% 10%;
 
     .details-container {
       display: flex;
@@ -77,7 +77,6 @@ const Container = styled.div`
     }
 
     .btn-download-container {
-      width: 100%;
       height: 100%;
       display: flex;
       justify-content: center;
@@ -142,6 +141,8 @@ const Container = styled.div`
       height: 40%;
       width: 80%;
       margin-left: 5rem;
+      gap: 2rem;
+      grid-template-rows: 80% 20%;
 
       grid-template-rows: 85% 15%;
       .details-container {
