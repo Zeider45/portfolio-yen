@@ -1,0 +1,12 @@
+{
+  "es": {
+    "optionsNav": ["Inicio", "Sobre mi", "Proyectos"],
+    "mainText": "Desarrolador Web",
+    "welcomingText": "Hola, soy Yender, me gusta el desarrollo web y la creacion de soluciones con codigo"
+  },
+  "en": {
+    "optionsNav": ["Home", "About me", "Proyects"],
+    "mainText": "Web Developer",
+    "welcomingText": "hello, i am Yender, i like the web development and creating solutions with code"
+  }
+}
