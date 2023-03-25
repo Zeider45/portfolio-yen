@@ -40,7 +40,7 @@ const Container = styled.div`
   .introduction-container {
     display: grid;
     height: 70%;
-    grid-template-rows: 90% 10%;
+    grid-template-rows: 85% 15%;
 
     .details-container {
       display: flex;
