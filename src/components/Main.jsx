@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import exampleImg from "../assets/example_img.jpg";
-import { BsDownload, BsArrowClockwise, BsCheckLg } from "react-icons/bs";
+import {
+  BsDownload,
+  BsArrowClockwise,
+  BsCheckLg,
+  BsEnvelope,
+  BsWhatsapp,
+} from "react-icons/bs";
 
 const Main = ({ language }) => {
   return (
@@ -17,10 +23,21 @@ const Main = ({ language }) => {
         </div>
         <div className="btn-download-container">
           <a download="" className="download-file">
-            Download CV <span className="download"> {<BsDownload />}</span>
+            {language.btnDownload}
+            <span className="download"> {<BsDownload />}</span>
             <span className="loading">{<BsArrowClockwise />} </span>
             <span className="ready"> {<BsCheckLg />}</span>
           </a>
+        </div>
+        <div className="contact-info">
+          <p>
+            <span>{<BsEnvelope />} </span>
+            yender.yr45@gmail.com
+          </p>
+          <p>
+            <span>{<BsWhatsapp />} </span>
+            +58 4127192045
+          </p>
         </div>
       </div>
     </Container>
@@ -36,12 +53,13 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   transition: all 0.5s;
+  animation: showing 0.7s ease-in-out;
 
   .introduction-container {
     display: grid;
-    height: 50%;
+    height: 70%;
     gap: 2rem;
-    grid-template-rows: 90% 10%;
+    grid-template-rows: 70% 15% 15%;
 
     .details-container {
       display: flex;
@@ -93,6 +111,8 @@ const Container = styled.div`
         outline: none;
         cursor: pointer;
         transition: all 0.5s;
+        box-shadow: 3px 3px 15px #44484488;
+        font-weight: bold;
 
         .download {
           display: block;
@@ -134,23 +154,57 @@ const Container = styled.div`
         background-color: var(--second-color);
       }
     }
+
+    .contact-info {
+      p {
+        color: var(--text-color);
+        margin-bottom: 0.5rem;
+        span {
+          position: relative;
+          color: var(--first-color);
+          margin-right: 0.5rem;
+          top: 0.2rem;
+        }
+      }
+    }
+  }
+
+  @keyframes showing {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   @media screen and (min-width: 720px) {
     .introduction-container {
-      height: 40%;
+      height: 70%;
       width: 80%;
-      margin-left: 5rem;
-      gap: 2rem;
-      grid-template-rows: 80% 20%;
+      gap: 1rem;
+      margin-left: 4.5rem;
 
-      grid-template-rows: 85% 15%;
+      grid-template-rows: 60% 20% 20%;
       .details-container {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         flex-direction: row-reverse;
+        .texts-container {
+          max-width: 600px;
+          margin-left: 2rem;
+          .main-text {
+            color: var(--first-color);
+            font-size: 3.5rem;
+          }
+
+          .welcoming-text {
+            font-size: 1.3rem;
+            color: var(--text-color);
+          }
+        }
         .picture-container {
-          width: 40%;
+          width: 30%;
           img {
             height: 100%;
             width: 100%;
@@ -160,7 +214,6 @@ const Container = styled.div`
       }
       .btn-download-container {
         justify-content: flex-start;
-        margin-left: 4rem;
       }
     }
   }
