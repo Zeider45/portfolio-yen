@@ -30,6 +30,7 @@ const Container = styled.div`
   padding: 0;
   display: grid;
   grid-template-rows: 90% 10%;
+  overflow-y: hidden;
 
   @media screen and (min-width: 720px) {
     grid-template-rows: 85% 15%;
