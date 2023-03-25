@@ -35,10 +35,10 @@ const NavBar = ({ language }) => {
 export default NavBar;
 
 const Container = styled.div`
-  position: absolute;
+  position: relative;
   height: 100%;
   font-size: 0.8rem;
-  top: 0;
+  bottom: 0;
 
   .nav-bar {
     height: 100%;
