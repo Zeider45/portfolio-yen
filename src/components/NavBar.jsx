@@ -35,9 +35,9 @@ const NavBar = ({ language }) => {
 export default NavBar;
 
 const Container = styled.div`
-  position: relative;
-  height: 100%;
-  font-size: 0.8rem;
+  position: absolute;
+  width: 100%;
+  height: 10%;
   bottom: 0;
 
   .nav-bar {
@@ -46,7 +46,7 @@ const Container = styled.div`
   }
 
   .nav-options {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     padding: 0rem 1rem;
     display: flex;
     height: 100%;
@@ -79,14 +79,14 @@ const Container = styled.div`
       display: flex;
       .btn-settings {
         position: relative;
-        top: -0.2rem;
+        top: -0.4rem;
         background: transparent;
         color: var(--text-color);
         border: none;
         outline: none;
         width: 1rem;
         height: 1rem;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         transition: all ease-in-out 0.5s;
         cursor: pointer;
       }
