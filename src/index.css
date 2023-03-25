@@ -20,12 +20,6 @@ input {
   font-family: "Nunito", sans-serif;
 }
 
-body {
-  max-height: 100vh;
-  max-width: 100vw;
-  overflow: hidden;
-}
-
 html {
   background-color: var(--background-firts);
 }
