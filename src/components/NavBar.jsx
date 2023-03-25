@@ -35,10 +35,8 @@ const NavBar = ({ language }) => {
 export default NavBar;
 
 const Container = styled.div`
-  position: absolute;
   width: 100%;
-  height: 10%;
-  bottom: 0;
+  height: 100%;
 
   .nav-bar {
     height: 100%;
@@ -113,6 +111,13 @@ const Container = styled.div`
           p {
             display: inline-block;
           }
+        }
+      }
+
+      .btn-settings-container {
+        .btn-settings {
+          top: -2px;
+          font-size: 1.3rem;
         }
       }
     }
