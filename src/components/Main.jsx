@@ -40,6 +40,7 @@ const Container = styled.div`
   .introduction-container {
     display: grid;
     height: 70%;
+    gap: 2rem;
     grid-template-rows: 85% 15%;
 
     .details-container {
