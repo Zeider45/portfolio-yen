@@ -3,12 +3,16 @@
     "optionsNav": ["Inicio", "Sobre mi", "Proyectos"],
     "mainText": "Desarrolador Web",
     "welcomingText": "Hola, soy Yender, me gusta el desarrollo web y la creacion de soluciones con codigo.",
-    "btnDownload": "Descargar CV"
+    "btnDownload": "Descargar CV",
+    "aboutMe": " Durante un tiempo atras conoci este mundo de la programacion y el desarrollo web, aprendi las bases y el como funciona, sigo aprendiendo y queriendo avanzar mucho mas, siendo el lenguaje de programacion que utilizo javascript junto con su entorno de programacion Node.js y para la creacion de interfaces React, entre otras tecnologias y herramientas.",
+    "textTecnologies": "Tecnologias que uso"
   },
   "en": {
     "optionsNav": ["Home", "About me", "Proyects"],
     "mainText": "Web Developer",
     "welcomingText": "hello, i am Yender, i like the web development and creating solutions with code.",
-    "btnDownload": "Download CV"
+    "btnDownload": "Download CV",
+    "aboutMe": " Some time ago I got to know this world of programming and web development, I learned the basics and how it works, I keep learning and want to advance much more, being the programming language that I use javascript along with its Node.js programming environment and for the creation of interfaces the React library, among other technologies and tools.",
+    "textTecnologies": "Technologies i use"
   }
 }

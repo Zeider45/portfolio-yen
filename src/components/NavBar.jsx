@@ -8,12 +8,18 @@ import {
 } from "react-icons/bs";
 import { useRef } from "react";
 
-const NavBar = ({ language, changeLanguage, changheTheme }) => {
+const NavBar = ({
+  texts,
+  changeTexts,
+  changheTheme,
+  changeBackgroundEnter,
+}) => {
   const settingsRef = useRef();
+  const navRef = useRef();
   const btnSettingsRef = useRef();
   const btnChangeTheme = useRef();
 
-  const getlanguage = () => {
+  const getTexts = () => {
     let settings = JSON.parse(localStorage.getItem("settings-page"));
     return settings.language;
   };
@@ -26,12 +32,15 @@ const NavBar = ({ language, changeLanguage, changheTheme }) => {
   const setThemeStyle = () => {
     let theme = getTheme();
     let btnChange = btnChangeTheme.current;
+    let nav = navRef.current;
     if (theme == "dark") {
       btnChange.style.left = "1.7rem";
+      nav.style.boxShadow = "3px 3px 15px #44484488";
       changheTheme("ligh");
     }
     if (theme == "ligh") {
       btnChange.style.left = "0rem";
+      nav.style.boxShadow = "none";
       changheTheme("dark");
     }
   };
@@ -58,19 +67,40 @@ const NavBar = ({ language, changeLanguage, changheTheme }) => {
 
   return (
     <Container>
-      <nav className="nav-bar">
+      <nav
+        ref={navRef}
+        className={`nav-bar ${getTheme() == "ligh" && "nav-bar-with-shadow"}`}
+      >
         <div className="nav-options">
-          <Link to="/" className="home btn-option">
+          <Link
+            onMouseEnter={() =>
+              changeBackgroundEnter("#3395aa33", "transparent", "#d365b722")
+            }
+            to="/"
+            className="home btn-option"
+          >
             <span>{<BsFillHouseDoorFill />}</span>
-            <p>{language.optionsNav[0]}</p>
+            <p>{texts.optionsNav[0]}</p>
           </Link>
-          <Link to="/about" className="about-me btn-option">
+          <Link
+            onMouseEnter={() =>
+              changeBackgroundEnter("#33a57a44", "transparent", "#a355be44")
+            }
+            to="/about"
+            className="about-me btn-option"
+          >
             <span>{<BsFillPersonFill />}</span>
-            <p>{language.optionsNav[1]}</p>
+            <p>{texts.optionsNav[1]}</p>
           </Link>
-          <Link to="/proyects" className="proyects btn-option">
+          <Link
+            onMouseEnter={() =>
+              changeBackgroundEnter("#a33fba44", "transparent", "#57d4cc44")
+            }
+            to="/proyects"
+            className="proyects btn-option"
+          >
             <span>{<BsBookHalf />}</span>
-            <p>{language.optionsNav[2]}</p>
+            <p>{texts.optionsNav[2]}</p>
           </Link>
           <div className="btn-settings-container">
             <button
@@ -91,16 +121,16 @@ const NavBar = ({ language, changeLanguage, changheTheme }) => {
                   }`}
                 ></div>
               </button>
-              <button className="btn-change-language">
+              <button className="btn-change-texts">
                 <div
-                  onClick={() => changeLanguage("es")}
-                  className={`btn-es ${getlanguage() == "es" && "activate"}`}
+                  onClick={() => changeTexts("es")}
+                  className={`btn-es ${getTexts() == "es" && "activate"}`}
                 >
                   es
                 </div>
                 <div
-                  onClick={() => changeLanguage("en")}
-                  className={`btn-en ${getlanguage() == "en" && "activate"}`}
+                  onClick={() => changeTexts("en")}
+                  className={`btn-en ${getTexts() == "en" && "activate"}`}
                 >
                   en
                 </div>
@@ -119,11 +149,15 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
 
+  .nav-bar-with-shadow {
+    box-shadow: 3px 3px 15px #44484488;
+  }
+
   .nav-bar {
     position: relative;
     height: 100%;
     background: var(--background-second);
-    box-shadow: 3px 3px 15px #44484488;
+
     .nav-options {
       font-size: 1.5rem;
       padding: 0rem 1rem;
@@ -164,14 +198,13 @@ const Container = styled.div`
           position: relative;
           display: flex;
           align-items: center;
-          top: 0rem;
+          top: -0.2rem;
           background: transparent;
           color: var(--text-color);
           border: none;
           outline: none;
           font-size: 1.5rem;
           transition: all ease-in-out 0.5s;
-          padding: 1rem;
           cursor: pointer;
           @keyframes spin {
             0% {
@@ -203,8 +236,8 @@ const Container = styled.div`
           display: none;
           position: absolute;
           grid-template-rows: 50% 50%;
-          top: -5rem;
-          right: -0.3rem;
+          top: -5.5rem;
+          right: -1.2rem;
           height: 4rem;
           width: 4rem;
           border-radius: 0.5rem;
@@ -257,7 +290,7 @@ const Container = styled.div`
             }
           }
 
-          .btn-change-language {
+          .btn-change-texts {
             display: grid;
             grid-template-columns: 50% 50%;
             height: 1.2rem;
@@ -310,12 +343,11 @@ const Container = styled.div`
             display: inline-block;
           }
         }
-      }
-
-      .btn-settings-container {
-        .btn-settings {
-          top: 0.1rem;
-          font-size: 1.3rem;
+        .btn-settings-container {
+          .btn-settings {
+            top: 0rem;
+            font-size: 1.3rem;
+          }
         }
       }
     }

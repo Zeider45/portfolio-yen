@@ -7,9 +7,19 @@ import { useState } from "react";
 import About from "./components/About";
 import Proyects from "./components/Proyects";
 import { useEffect } from "react";
+import { useRef } from "react";
 
 function App() {
-  const [language, setLanguage] = useState(languages.es);
+  const [texts, setTexts] = useState(languages.es);
+  const app = useRef();
+
+  const changeBackgroundLeave = () => {
+    app.current.style.background = `linear-gradient(to left, transparent, transparent, transparent`;
+  };
+
+  const changeBackgroundEnter = (color1, color2, color3) => {
+    app.current.style.background = `linear-gradient(to left, ${color1}, ${color2}, ${color3}`;
+  };
 
   const changheTheme = (theme) => {
     const settingsPage = JSON.parse(localStorage.getItem("settings-page"));
@@ -35,9 +45,9 @@ function App() {
     }
   };
 
-  const changeLanguage = (language) => {
+  const changeTexts = (language) => {
     if (language == "es") {
-      setLanguage(languages.es);
+      setTexts(languages.es);
       const settingsPage = JSON.parse(localStorage.getItem("settings-page"));
       localStorage.setItem(
         "settings-page",
@@ -45,7 +55,7 @@ function App() {
       );
     }
     if (language == "en") {
-      setLanguage(languages.en);
+      setTexts(languages.en);
       const settingsPage = JSON.parse(localStorage.getItem("settings-page"));
       localStorage.setItem(
         "settings-page",
@@ -61,22 +71,32 @@ function App() {
       let settings = { language: "es", theme: "dark" };
       localStorage.setItem("settings-page", JSON.stringify(settings));
     } else {
-      changeLanguage(settingsPage.language);
+      changeTexts(settingsPage.language);
       changheTheme(settingsPage.theme);
     }
   }, []);
 
   return (
-    <Container>
+    <Container ref={app}>
       <Routes>
-        <Route path="/" element={<Main language={language} />} />
-        <Route path="/about" element={<About language={language} />} />
-        <Route path="/proyects" element={<Proyects language={language} />} />
+        <Route
+          path="/"
+          element={
+            <Main
+              texts={texts}
+              changeBackgroundEnter={changeBackgroundEnter}
+              changeBackgroundLeave={changeBackgroundLeave}
+            />
+          }
+        />
+        <Route path="/about" element={<About texts={texts} />} />
+        <Route path="/proyects" element={<Proyects texts={texts} />} />
       </Routes>
       <NavBar
-        language={language}
-        changeLanguage={changeLanguage}
+        texts={texts}
+        changeTexts={changeTexts}
         changheTheme={changheTheme}
+        changeBackgroundEnter={changeBackgroundEnter}
       ></NavBar>
     </Container>
   );
@@ -94,6 +114,7 @@ const Container = styled.div`
   padding: 0;
   display: grid;
   grid-template-rows: 90% 10%;
+  background: linear-gradient(to left, transparent, transparent, transparent);
   overflow-y: hidden;
 
   @media screen and (min-width: 720px) {
