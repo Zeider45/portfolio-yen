@@ -107,7 +107,7 @@ const Container = styled.div`
 
       .picture-container {
         width: 10rem;
-        height: 18rem;
+        height: 12rem;
         border-radius: 20% 20% 40%;
         overflow: hidden;
         img {
@@ -182,6 +182,7 @@ const Container = styled.div`
 
     .contact-info {
       font-size: 1.2rem;
+      padding-left: 1rem;
       p {
         color: var(--text-color);
         margin-bottom: 0.5rem;
@@ -194,7 +195,7 @@ const Container = styled.div`
         }
       }
       a {
-        font-size: 1.4rem;
+        font-size: 2rem;
         position: relative;
         color: var(--first-color);
         margin-right: 0.5rem;

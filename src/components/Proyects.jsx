@@ -35,7 +35,7 @@ const Container = styled.div`
     grid-template-rows: repeat(4, 10rem);
     gap: 1rem;
     width: 90%;
-    height: 80%;
+    height: 95%;
     margin: auto;
     overflow: auto;
     padding-right: 0.5rem;
