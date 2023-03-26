@@ -21,12 +21,12 @@ const NavBar = ({
 
   const getTexts = () => {
     let settings = JSON.parse(localStorage.getItem("settings-page"));
-    return settings.language;
+    return settings.language && settings;
   };
 
   const getTheme = () => {
     let settings = JSON.parse(localStorage.getItem("settings-page"));
-    return settings.theme;
+    return settings.theme && settings;
   };
 
   const setThemeStyle = () => {
