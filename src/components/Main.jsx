@@ -9,7 +9,7 @@ import {
   BsGithub,
 } from "react-icons/bs";
 
-const Main = ({ texts, changeBackgroundEnter, changeBackgroundLeave }) => {
+const Main = ({ texts, changeBackgroundEnter }) => {
   return (
     <Container className="section-main">
       <div className="introduction-container">
