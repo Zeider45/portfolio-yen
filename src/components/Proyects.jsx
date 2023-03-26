@@ -1,15 +1,18 @@
 import styled from "styled-components";
 import Card from "./Card";
+import proyect1 from "../assets/proyect-1.png";
+import proyect2 from "../assets/proyect-2.png";
+import proyect3 from "../assets/proyect-3.png";
 
 const Proyects = () => {
   return (
     <Container>
       <div className="text-main-proyects"></div>
       <section className="cards-proyects">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <Card img={proyect1} />
+        <Card img={proyect2} />
+        <Card img={proyect3} />
+        <Card img={proyect1} />
       </section>
     </Container>
   );
@@ -43,7 +46,7 @@ const Container = styled.div`
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, 1fr);
       gap: 1rem;
-      width: 60%;
+      width: 80%;
       height: 80%;
       margin: auto;
       overflow: auto;
