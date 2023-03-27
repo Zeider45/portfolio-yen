@@ -96,7 +96,7 @@ const NavBar = ({
             onMouseEnter={() =>
               changeBackgroundEnter("#a33fba44", "transparent", "#57d4cc44")
             }
-            to="/proyects"
+            to="/projects"
             className="proyects btn-option"
           >
             <span>{<BsBookHalf />}</span>
@@ -236,7 +236,7 @@ const Container = styled.div`
           display: none;
           position: absolute;
           grid-template-rows: 50% 50%;
-          top: -5.5rem;
+          top: -6rem;
           right: -1.2rem;
           height: 4rem;
           width: 4rem;

@@ -77,9 +77,9 @@ const Container = styled.div`
 
   .introduction-container {
     display: grid;
-    height: 80%;
+    height: 100%;
     gap: 2rem;
-    grid-template-rows: 70% 15% 15%;
+    grid-template-rows: 50% 20% 30%;
 
     .details-container {
       display: flex;
@@ -182,6 +182,8 @@ const Container = styled.div`
 
     .contact-info {
       font-size: 1.2rem;
+      height: 10rem;
+      width: 100%;
       padding-left: 1rem;
       p {
         color: var(--text-color);
@@ -238,8 +240,8 @@ const Container = styled.div`
           }
         }
         .picture-container {
-          width: 50%;
-          height: 15rem;
+          width: 30%;
+          height: 13rem;
           img {
             height: 100%;
             width: 100%;
@@ -249,6 +251,27 @@ const Container = styled.div`
       }
       .btn-download-container {
         justify-content: flex-start;
+      }
+    }
+  }
+
+  @media screen and (max-height: 600px) {
+    .introduction-container {
+      height: 50%;
+      width: 80%;
+      gap: 1rem;
+      margin-left: 4.5rem;
+      grid-template-rows: 60% 20% 20%;
+      .details-container {
+        .picture-container {
+          width: 30%;
+          height: 10rem;
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
       }
     }
   }

@@ -5,17 +5,13 @@ import Main from "./components/Main";
 import languages from "./utils/languages.json";
 import { useState } from "react";
 import About from "./components/About";
-import Proyects from "./components/Proyects";
+import Projects from "./components/Projects";
 import { useEffect } from "react";
 import { useRef } from "react";
 
 function App() {
   const [texts, setTexts] = useState(languages.es);
   const app = useRef();
-
-  const changeBackgroundLeave = () => {
-    app.current.style.background = `linear-gradient(to left, transparent, transparent, transparent`;
-  };
 
   const changeBackgroundEnter = (color1, color2, color3) => {
     app.current.style.background = `linear-gradient(to left, ${color1}, ${color2}, ${color3}`;
@@ -82,15 +78,11 @@ function App() {
         <Route
           path="/"
           element={
-            <Main
-              texts={texts}
-              changeBackgroundEnter={changeBackgroundEnter}
-              changeBackgroundLeave={changeBackgroundLeave}
-            />
+            <Main texts={texts} changeBackgroundEnter={changeBackgroundEnter} />
           }
         />
         <Route path="/about" element={<About texts={texts} />} />
-        <Route path="/proyects" element={<Proyects texts={texts} />} />
+        <Route path="/projects" element={<Projects texts={texts} />} />
       </Routes>
       <NavBar
         texts={texts}

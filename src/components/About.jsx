@@ -9,6 +9,7 @@ const About = ({ texts }) => {
   return (
     <Container>
       <div className="text-main-about">
+        <h3>{texts.aboutMeTitle}</h3>
         <p>{texts.aboutMe}</p>
       </div>
       <div className="technologies">
@@ -41,7 +42,7 @@ const Container = styled.div`
   transition: all 0.5s;
   animation: showing 0.7s;
   .text-main-about {
-    width: 70%;
+    width: 80%;
     margin: auto;
     font-size: 1rem;
     color: var(--text-color);
@@ -53,8 +54,6 @@ const Container = styled.div`
     height: 80%;
     grid-template-rows: 20% 80%;
     h3 {
-      font-size: 1rem;
-      font-weight: normal;
       color: var(--text-color);
     }
 
