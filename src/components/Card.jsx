@@ -87,6 +87,8 @@ const Container = styled.div`
         padding: 0.2rem 0.5rem;
         background-color: var(--first-color);
         border-radius: 0.5rem;
+        text-decoration: none;
+        color: var(--text-color)
         height: 2rem;
         margin-left: 0.5rem;
         cursor: pointer;
