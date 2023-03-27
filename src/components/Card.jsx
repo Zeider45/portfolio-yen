@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Card = ({ img, texts, title, description }) => {
+const Card = ({ img, texts, title, description,hrefProyect,hrefCode }) => {
   return (
     <Container>
       <img src={img} alt="img of project" />
@@ -9,8 +9,8 @@ const Card = ({ img, texts, title, description }) => {
         <h4>{title}</h4>
         <p>{description}</p>
         <nav className="project-options">
-          <a>{texts.projectOption1}</a>
-          <a>{texts.projectOption2}</a>
+          <a href={hrefProyect}>{texts.projectOption1}</a>
+          <a href={hrefCode}>{texts.projectOption2}</a>
         </nav>
       </div>
     </Container>
