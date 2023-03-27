@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import Card from "./Card";
-import project1 from "../assets/Project-1.png";
-import project2 from "../assets/Project-2.png";
-import project3 from "../assets/Project-3.png";
+import project1 from "../assets/project-1.png";
+import project2 from "../assets/project-2.png";
+import project3 from "../assets/project-3.png";
 
 const Projects = ({ texts }) => {
   return (
