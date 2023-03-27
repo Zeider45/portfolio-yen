@@ -7,6 +7,7 @@ import {
   BsFillPersonFill,
 } from "react-icons/bs";
 import { useRef } from "react";
+import { useEffect } from "react";
 
 const NavBar = ({
   texts,
@@ -64,6 +65,9 @@ const NavBar = ({
       }, 900);
     }
   };
+  useEffect(() => {
+    navRef.current?.scrollIntoView({ behaviour: "smooth" });
+  }, []);
 
   return (
     <Container>
