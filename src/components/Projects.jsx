@@ -16,24 +16,24 @@ const Projects = ({ texts }) => {
           texts={texts}
           title={texts.titleProject1}
           description={texts.descriptionProject1}
+          hrefProyect="https://yennic0302.github.io/Questions/"
+          hrefCode="https://github.com/Yennic0302/Questions"
         />
         <Card
           img={project2}
           texts={texts}
           title={texts.titleProject2}
           description={texts.descriptionProject2}
+          hrefProyect="https://yennic0302.github.io/memory/"
+          hrefCode="https://github.com/Yennic0302/memory"
         />
         <Card
           img={project3}
           texts={texts}
           title={texts.titleProject3}
           description={texts.descriptionProject3}
-        />
-        <Card
-          img={project1}
-          texts={texts}
-          title={texts.titleProject4}
-          description={texts.descriptionProject4}
+          hrefProyect="https://github.com/Yennic0302/yen-comerce"
+          hrefCode="https://yennic0302.github.io/yen-comerce/"
         />
       </section>
     </Container>
