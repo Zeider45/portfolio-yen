@@ -1,7 +1,7 @@
 {
   "es": {
     "optionsNav": ["Inicio", "Sobre mi", "Projectos"],
-    "mainText": "Desarrolador Web",
+    "mainText": "Desarrollador Web",
     "welcomingText": "Hola, soy Yender, me gusta el desarrollo web y la creacion de soluciones con codigo.",
     "btnDownload": "Descargar CV",
     "aboutMe": " Durante un tiempo atras conoci este mundo de la programacion y el desarrollo web, aprendi las bases y el como funciona, sigo aprendiendo y queriendo avanzar mucho mas, siendo el lenguaje de programacion que utilizo javascript junto con su entorno de programacion Node.js y para la creacion de interfaces React, entre otras tecnologias y herramientas.",
