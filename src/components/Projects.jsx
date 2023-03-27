@@ -32,8 +32,8 @@ const Projects = ({ texts }) => {
           texts={texts}
           title={texts.titleProject3}
           description={texts.descriptionProject3}
-          hrefProyect="https://github.com/Yennic0302/yen-comerce"
-          hrefCode="https://yennic0302.github.io/yen-comerce/"
+          hrefProyect="https://yennic0302.github.io/yen-comerce/"
+          hrefCode="https://github.com/Yennic0302/yen-comerce"
         />
       </section>
     </Container>
